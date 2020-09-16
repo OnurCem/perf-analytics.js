@@ -8,6 +8,9 @@
     "build": "npm run clean && rollup -c",
     "lint": "eslint src/ --ext .js,.ts",
     "lint:fix": "npm run lint -- --fix",
+    "prettier": "prettier **/*.{js,ts,json,md}",
+    "prettier:check": "npm run prettier -- --check",
+    "prettier:fix": "npm run prettier -- --write",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -33,7 +36,9 @@
     "@typescript-eslint/parser": "^4.1.1",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
+    "prettier": "2.1.2",
     "rollup": "^2.27.0",
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.0.1",

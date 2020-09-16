@@ -3,8 +3,6 @@
     "target": "es6",
     "rootDir": "./src"
   },
-  "include": [
-    "src/**/*.ts"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": []
 }
