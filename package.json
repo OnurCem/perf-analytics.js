@@ -1,0 +1,26 @@
+{
+  "name": "perf-analytics.js",
+  "version": "1.0.0",
+  "description": "Client-side JS library for perf-analytics",
+  "main": "dist/perf-analytics.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OnurCem/perf-analytics.js.git"
+  },
+  "keywords": [
+    "performance",
+    "metrics"
+  ],
+  "author": {
+    "name": "Onur Cem Senel",
+    "email": "onurcemsenel@gmail.com"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OnurCem/perf-analytics.js/issues"
+  },
+  "homepage": "https://github.com/OnurCem/perf-analytics.js#readme"
+}
