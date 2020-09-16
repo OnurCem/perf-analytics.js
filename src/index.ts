@@ -1,3 +1,4 @@
 export const init = (apiKey: string): void => {
-    console.log('Initialized with API key:', apiKey);
+  // eslint-disable-next-line no-console
+  console.log('Initialized with API key:', apiKey);
 };
