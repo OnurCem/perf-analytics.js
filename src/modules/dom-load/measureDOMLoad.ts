@@ -1,15 +1,19 @@
 import { afterPageLoad } from '../../utils/afterPageLoad';
+import { MetricModel } from '../../models/MetricModels';
+import { METRIC_NAMES } from '../../constants/metricConstants';
 
-export const measureDOMLoad = (): void => {
-  try {
-    afterPageLoad(() => {
-      const { timing } = window.performance;
+export const measureDOMLoad = (): Promise<MetricModel> =>
+  new Promise((resolve, reject) => {
+    try {
+      afterPageLoad(() => {
+        const { timing } = window.performance;
 
-      // eslint-disable-next-line no-console
-      console.log('DOM Load', timing.domContentLoadedEventEnd - timing.navigationStart);
-    });
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.error(e);
-  }
-};
+        resolve({
+          metricName: METRIC_NAMES.DOM_LOAD,
+          duration: timing.domContentLoadedEventEnd - timing.navigationStart,
+        });
+      });
+    } catch (e) {
+      reject(e);
+    }
+  });
