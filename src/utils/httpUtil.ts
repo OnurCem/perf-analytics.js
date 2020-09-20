@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:8080'; // TODO Get from env variable
+const baseURL = '__API_URL__';
 
 interface RequestConfig {
   data: unknown;
