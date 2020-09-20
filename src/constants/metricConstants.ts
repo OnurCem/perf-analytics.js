@@ -6,5 +6,7 @@ export const METRIC_NAMES = {
   RESOURCE: 'RESOURCE',
 };
 
+export const TRACKED_RESOURCE_INITIATOR_TYPES = ['script', 'link', 'img'];
+
 export const MAX_RETRY_COUNT_ON_NETWORK_FAULT = 5;
 export const REQUEST_RETRY_DELAY_TIME = 3000;
