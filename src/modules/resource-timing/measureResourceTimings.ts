@@ -21,10 +21,17 @@ export const measureResourceTimings = (): void => {
       });
     });
 
-    performanceObserver.observe({
-      type: 'resource',
-      buffered: true,
-    });
+    try {
+      performanceObserver.observe({
+        type: 'resource',
+        buffered: true,
+      });
+    } catch (e) {
+      // Fallback for Safari
+      performanceObserver.observe({
+        entryTypes: ['resource'],
+      });
+    }
   } catch (e) {
     // eslint-disable-next-line no-console
     console.log(e);
