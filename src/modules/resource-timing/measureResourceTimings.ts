@@ -10,7 +10,7 @@ export const measureResourceTimings = (): void => {
             [
               {
                 metricName: METRIC_NAMES.RESOURCE,
-                duration,
+                duration: parseInt(duration.toFixed(0), 10),
                 measureTime: new Date().toISOString(),
                 resourceName: name,
               },
