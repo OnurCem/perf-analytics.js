@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="perf-analytics.umd.min.js"></script>
+    <script>
+      perfAnalytics.init();
+    </script>
+
+    <style>
+      body {
+        background: #f28232;
+        color: #ffffff;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body></body>
+  <script>
+    setTimeout(() => {
+      const h1 = document.createElement('H1');
+      h1.textContent = 'First (Contentful) Paint';
+      document.body.append(h1);
+    }, 500);
+    setTimeout(() => {
+      const img = document.createElement('img');
+      img.src = 'https://pngimage.net/wp-content/uploads/2018/06/online-test-png-7.png';
+      document.body.append(img);
+    }, 1000);
+  </script>
+</html>
