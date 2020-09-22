@@ -11,7 +11,7 @@
     "watch": "rollup -c -w",
     "lint": "eslint src/ --ext .js,.ts",
     "lint:fix": "npm run lint -- --fix",
-    "prettier": "prettier **/*.{js,ts,json,md}",
+    "prettier": "prettier '**/*.{js,ts,json,md}'",
     "prettier:check": "npm run prettier -- --check",
     "prettier:fix": "npm run prettier -- --write",
     "test": "echo \"Error: no test specified\" && exit 1"
