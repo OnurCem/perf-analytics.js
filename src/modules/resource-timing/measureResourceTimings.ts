@@ -4,13 +4,15 @@ import { METRIC_NAMES, TRACKED_RESOURCE_INITIATOR_TYPES } from '../../constants/
 export const measureResourceTimings = (): void => {
   try {
     const performanceObserver = new PerformanceObserver((entryList) => {
-      entryList.getEntries().forEach(({ initiatorType, name, duration }: PerformanceResourceTiming) => {
+      entryList.getEntries().forEach((entry: PerformanceResourceTiming) => {
+        const { initiatorType, name, fetchStart, responseEnd } = entry;
+
         if (TRACKED_RESOURCE_INITIATOR_TYPES.includes(initiatorType)) {
           sendMetricsToServer(
             [
               {
                 metricName: METRIC_NAMES.RESOURCE,
-                duration: parseInt(duration.toFixed(0), 10),
+                duration: parseInt((responseEnd - fetchStart).toFixed(0), 10),
                 measureTime: new Date().toISOString(),
                 resourceName: name,
               },
